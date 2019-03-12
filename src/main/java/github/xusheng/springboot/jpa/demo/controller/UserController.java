@@ -53,5 +53,10 @@ public class UserController {
         return list;
     }
 
+    @RequestMapping(method = RequestMethod.GET,value = "/findUser")
+    public List<User> findUser(@RequestParam("userName")String userName){
+        return  userService.findUser(userName);
+    }
+
 }
 

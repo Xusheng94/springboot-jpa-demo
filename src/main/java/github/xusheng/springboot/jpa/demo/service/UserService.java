@@ -3,6 +3,7 @@ package github.xusheng.springboot.jpa.demo.service;
 import github.xusheng.springboot.jpa.demo.entity.User;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * @Description
@@ -21,5 +22,7 @@ public interface UserService {
     public User selectById(int id);
     /** 查询全部列表*/
     public Iterator<User> selectAll(int pageNum, int pageSize);
+
+    List<User> findUser(String userName);
 
 }

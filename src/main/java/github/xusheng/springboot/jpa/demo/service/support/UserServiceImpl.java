@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -82,5 +83,10 @@ public class UserServiceImpl  implements UserService {
         Page<User> users = userRepository.findAll(pageable);
         Iterator<User> userIterator =  users.iterator();
         return  userIterator;
+    }
+
+    @Override
+    public List<User> findUser(String username) {
+        return userRepository.findUser(username);
     }
 }
